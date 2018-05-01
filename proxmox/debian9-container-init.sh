@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Change locales to be generated
 # Find '# en_US.UTF8 UTF8' and remove the pound
