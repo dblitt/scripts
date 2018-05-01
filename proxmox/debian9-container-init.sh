@@ -89,3 +89,7 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="dblitt99"/' /root/.zshrc
 # Git stuff
 git --git-dir /root/.oh-my-zsh/.git --work-tree /root/.oh-my-zsh add themes/dblitt99.zsh-theme
 git --git-dir /root/.oh-my-zsh/.git --work-tree /root/.oh-my-zsh commit -m 'added dblitt99 theme'
+
+# After everything is done: Shutdown
+# Keep this at the end of the file
+shutdown -r now
