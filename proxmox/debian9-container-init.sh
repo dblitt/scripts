@@ -2,7 +2,7 @@
 
 # Change locales to be generated
 # Find '# en_US.UTF8 UTF8' and remove the pound
-sed -i 's/#\ en_US.UTF-8\ UTF-8/en_US\.UTF8\ UTF8/' /etc/locale.gen
+sed -i 's/#\ en_US.UTF-8\ UTF-8/en_US\.UTF-8\ UTF-8/' /etc/locale.gen
 
 # Set default locale to en_US.UTF8
 echo 'LANG=en_US.UTF-8' > /etc/default/locale
