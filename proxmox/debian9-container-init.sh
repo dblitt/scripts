@@ -15,7 +15,7 @@ apt-get update
 apt-get upgrade -y
 
 # Install vim, curl, zsh, and git
-apt-get install vim curl zsh git -y
+apt-get install vim curl zsh git htop sudo net-tools -y
 
 # Modify Systemd Container Getty for root autologin
 sed -i 's/ExecStart=-\/sbin\/agetty\ --noclear\ --keep-baud\ tty%I\ 115200,38400,9600\ $TERM/ExecStart=-\/sbin\/agetty\ --noclear\ --autologin\ root\ --keep-baud\ tty%I\ 115200,38400,9600\ $TERM/' /lib/systemd/system/container-getty@.service
