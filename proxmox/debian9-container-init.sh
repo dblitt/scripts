@@ -21,11 +21,11 @@ apt-get install vim curl zsh git htop sudo net-tools -y
 sed -i 's/ExecStart=-\/sbin\/agetty\ --noclear\ --keep-baud\ tty%I\ 115200,38400,9600\ $TERM/ExecStart=-\/sbin\/agetty\ --noclear\ --autologin\ root\ --keep-baud\ tty%I\ 115200,38400,9600\ $TERM/' /lib/systemd/system/container-getty@.service
 
 # Modify ~/.bashrc for ls colors
-sed -i 's/#\ export\ LS_OPTIONS='"'"'--color=auto'"'"'/export\ LS_OPTIONS='"'"'--color=auto'"'"'/' /root/.bashrc
-sed -i 's/#\ eval\ "`dircolors`"/eval\ "`dircolors`"/' /root/.bashrc
-sed -i 's/#\ alias\ ls='"'"'ls \$LS_OPTIONS'"'"'/alias\ ls='"'"'ls \$LS_OPTIONS'"'"'/' /root/.bashrc # alias ls='ls $LS_OPTIONS'
-sed -i 's/#\ alias\ ll='"'"'ls \$LS_OPTIONS -l'"'"'/alias\ ll='"'"'ls \$LS_OPTIONS -l'"'"'/' /root/.bashrc
-sed -i 's/#\ alias\ l='"'"'ls \$LS_OPTIONS -lA'"'"'/alias\ l='"'"'ls \$LS_OPTIONS -lA'"'"'/' /root/.bashrc
+sed -i 's/#\ export\ LS_OPTIONS='"'"'--color=auto'"'"'/export\ LS_OPTIONS='"'"'--color=auto'"'"'/' $HOME/.bashrc
+sed -i 's/#\ eval\ "`dircolors`"/eval\ "`dircolors`"/' $HOME/.bashrc
+sed -i 's/#\ alias\ ls='"'"'ls \$LS_OPTIONS'"'"'/alias\ ls='"'"'ls \$LS_OPTIONS'"'"'/' $HOME/.bashrc # alias ls='ls $LS_OPTIONS'
+sed -i 's/#\ alias\ ll='"'"'ls \$LS_OPTIONS -l'"'"'/alias\ ll='"'"'ls \$LS_OPTIONS -l'"'"'/' $HOME/.bashrc
+sed -i 's/#\ alias\ l='"'"'ls \$LS_OPTIONS -lA'"'"'/alias\ l='"'"'ls \$LS_OPTIONS -lA'"'"'/' $HOME/.bashrc
 
 # Import Internal Root CA
 mkdir /usr/share/ca-certificates/internal
@@ -81,14 +81,14 @@ PROMPT='"'"'%n@%M ${ret_status}%{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"' > /root/.oh-my-zsh/themes/dblitt99.zsh-theme
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"' > $HOME/.oh-my-zsh/themes/dblitt99.zsh-theme
 
 # Change default theme to 'dblitt99'
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="dblitt99"/' /root/.zshrc
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="dblitt99"/' $HOME/.zshrc
 
 # Git stuff
-git --git-dir /root/.oh-my-zsh/.git --work-tree /root/.oh-my-zsh add themes/dblitt99.zsh-theme
-git --git-dir /root/.oh-my-zsh/.git --work-tree /root/.oh-my-zsh commit -m 'added dblitt99 theme'
+git --git-dir $HOME/.oh-my-zsh/.git --work-tree $HOME/.oh-my-zsh add themes/dblitt99.zsh-theme
+git --git-dir $HOME/.oh-my-zsh/.git --work-tree $HOME/.oh-my-zsh commit -m 'added dblitt99 theme'
 
 # After everything is done: Shutdown
 # Keep this at the end of the file
