@@ -103,6 +103,9 @@ echo 'ECDSA SSH Fingerprint:' >> $HOME/information.txt
 echo `ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub` >> $HOME/information.txt
 echo '' >> $HOME/information.txt
 
+# After finished collecting information:
+cat $HOME/information.txt
+
 # After everything is done: Shutdown
 # Keep this at the end of the file
 shutdown -r now
