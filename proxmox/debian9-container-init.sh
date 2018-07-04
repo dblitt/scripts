@@ -96,10 +96,10 @@ git --git-dir $HOME/.oh-my-zsh/.git --work-tree $HOME/.oh-my-zsh commit -m 'adde
 echo 'RSA SSH Fingerprint:' > $HOME/information.txt
 echo `ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub` >> $HOME/information.txt
 echo '' >> $HOME/information.txt
-echo 'DSA SSH Fingerprint:' > $HOME/information.txt
+echo 'DSA SSH Fingerprint:' >> $HOME/information.txt
 echo `ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key.pub` >> $HOME/information.txt
 echo '' >> $HOME/information.txt
-echo 'ECDSA SSH Fingerprint:' > $HOME/information.txt
+echo 'ECDSA SSH Fingerprint:' >> $HOME/information.txt
 echo `ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub` >> $HOME/information.txt
 echo '' >> $HOME/information.txt
 
