@@ -90,6 +90,9 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="dblitt99"/' $HOME/.zshrc
 git --git-dir $HOME/.oh-my-zsh/.git --work-tree $HOME/.oh-my-zsh add themes/dblitt99.zsh-theme
 git --git-dir $HOME/.oh-my-zsh/.git --work-tree $HOME/.oh-my-zsh commit -m 'added dblitt99 theme'
 
+# Change default shell to zsh
+chsh --shell /bin/zsh $USER
+
 # Get information about Container
 # Save information to $HOME/information.txt
 # Get SSH Fingerprints
