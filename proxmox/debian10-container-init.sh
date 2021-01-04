@@ -10,6 +10,9 @@ echo 'LANG=en_US.UTF-8' > /etc/default/locale
 # Generate locale
 locale-gen
 
+# Set the timezone to America/Chicago
+timedatectl set-timezone America/Chicago
+
 # Update packages
 apt-get update
 apt-get upgrade -y
